@@ -1,38 +1,106 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+.app__header {
+  position: sticky;
+  top: 0;
+  z-index: -1;
+  margin: 0 auto;
   text-align: center;
+  padding: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app__title {
+  color: aliceblue;
+  font-size: 3.5rem;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app__inputForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.app__todoInputLabel {
+  font-style: italic;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app__todoInput {
+  padding: 10px 20px;
+  border-radius: 0.3rem;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: aliceblue;
+}
+
+.app__todoListContainer {
+  /* background-color: brown; */
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.app__todoListItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  margin: 5px;
+  border-radius: 1rem;
+  transition: all 0.5s ease;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.app__todoListItem:hover {
+  transform: translateY(-5px);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.app__todoListItemTitle {
+  font-size: larger;
+  margin-bottom: 20px;
+}
+
+.app__todoListItemButtons {
+  display: flex;
+  gap: 2rem;
+}
+
+.app__button {
+  padding: 5px;
+  font-size: larger;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.app__button:hover {
+  transform: scale(1.2);
+}
+
+.app__todoListItemCompleteButton:hover {
+  background-color: rgba(0, 128, 0, 0.5);
+}
+
+.app__todoListItemDeleteButton:hover {
+  background-color: rgba(255, 0, 0, 0.5);
 }

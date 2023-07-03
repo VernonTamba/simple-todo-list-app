@@ -5,13 +5,24 @@
   font-family: "Rubik", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .app__header {
   position: sticky;
-  top: 0;
-  z-index: -1;
+  top: 1%;
+  z-index: 1000;
   margin: 0 auto;
   text-align: center;
-  padding: 30px;
+  padding: 40px;
+  transition: all 0.3s ease;
+  max-width: fit-content;
+  border-radius: 5rem;
+}
+
+.dark--bg {
+  background: rgba(0, 0, 0, 0.95);
 }
 
 .app__title {
@@ -28,8 +39,18 @@
   gap: 0.5rem;
 }
 
+.app__inputRow {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
 .app__todoInputLabel {
   font-style: italic;
+}
+
+.app__todoInputLabel--darkBackground {
+  color: aliceblue;
 }
 
 .app__todoInput {
@@ -41,8 +62,28 @@
   color: aliceblue;
 }
 
+.app__todoInput--darkBackground {
+  background-color: aliceblue;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.app__addTodoButton {
+  cursor: pointer;
+  padding: 10px 30px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  font-weight: 900;
+  transition: all 0.1s ease;
+  border-radius: 1rem;
+}
+
+.app__addTodoButton:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+}
+
 .app__todoListContainer {
-  /* background-color: brown; */
   width: 80%;
   margin: 0 auto;
   padding: 20px;
@@ -54,6 +95,7 @@
 }
 
 .app__todoListItem {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,11 +103,17 @@
   color: aliceblue;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 40px;
-  margin: 5px;
+  margin: 10px;
   border-radius: 1rem;
   transition: all 0.5s ease;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.app__todoCompleteStatus {
+  position: absolute;
+  bottom: 90%;
+  font-size: 2rem;
 }
 
 .app__todoListItem:hover {
@@ -97,10 +145,20 @@
   transform: scale(1.2);
 }
 
-.app__todoListItemCompleteButton:hover {
+.app__todoListItemCompleteButton--complete:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.app__todoListItemCompleteButton--undoComplete:hover {
   background-color: rgba(0, 128, 0, 0.5);
 }
 
 .app__todoListItemDeleteButton:hover {
   background-color: rgba(255, 0, 0, 0.5);
+}
+
+.app__noTodosInfo {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px 40px;
+  border-radius: 1rem;
 }
